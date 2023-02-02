@@ -3,6 +3,11 @@
 
 <table>
     <tr>
+        <th>Loader</th>
+        <th>Tinder Cards</th>
+        <th>Tinder Cards</th>
+    </tr>
+    <tr>
         <td>
             <img
                 alt="gif"
