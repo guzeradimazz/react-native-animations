@@ -1,5 +1,5 @@
 import {StyleSheet, Text, Image, View} from 'react-native';
-import React, {useCallback, useState} from 'react';
+import React, {useCallback} from 'react';
 import Animated, {
   runOnJS,
   useAnimatedGestureHandler,
@@ -7,22 +7,19 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import {
-  GestureEventPayload,
-  PanGestureHandler,
-  PanGestureHandlerEventPayload,
-} from 'react-native-gesture-handler';
+import {PanGestureHandler} from 'react-native-gesture-handler';
 import Choice from './Choice';
 
 interface ICard {
   name: string;
   age: number;
   uri: string;
+  choice: string;
+  choiceEvent: (value: number) => void;
   isFirst: boolean;
 }
 
-const Card = ({name, age, uri, isFirst}: ICard) => {
-  const [choice, setChoice] = useState('middle');
+const Card = ({name, age, uri, choice, choiceEvent, isFirst}: ICard) => {
   const renderChoice = useCallback(() => {
     return (
       <>
@@ -45,20 +42,11 @@ const Card = ({name, age, uri, isFirst}: ICard) => {
   const x = useSharedValue(startingPosition);
   const y = useSharedValue(startingPosition);
 
-  const choiceEvent = (value: number) => {
-    // 'worklet';
-    value > 20
-      ? setChoice('right')
-      : value < -20
-      ? setChoice('left')
-      : setChoice('middle');
-  };
   const eventHandler = useAnimatedGestureHandler({
     onStart: () => {
       pressed.value = true;
     },
     onActive: event => {
-      // runOnJS(choiceEvent)(event);
       x.value = startingPosition + event.translationX;
       y.value = startingPosition + event.translationY;
     },
@@ -107,11 +95,14 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
+    backgroundColor: '#fff',
     width: '90%',
+    height: '90%',
     borderWidth: 1,
     borderColor: '#fc035e',
     alignItems: 'center',
     borderRadius: 20,
+    position: 'absolute',
   },
   image: {
     width: '100%',

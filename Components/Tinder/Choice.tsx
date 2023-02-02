@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-// interface IChoice {
-//   type: string;
-//   color: string;
-// }
+interface IChoice {
+  type: string;
+  color: string;
+}
 
-const Choice = ({type, color}) => {
+const Choice = ({type, color}: IChoice) => {
   return (
     <View style={[styles.choice, {borderColor: color}]}>
       <Text style={[styles.text, {color: color}]}>{type}</Text>
