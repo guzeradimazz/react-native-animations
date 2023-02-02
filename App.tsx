@@ -4,6 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Loader} from './Components/Loader';
+import {Tinder} from './Components/Tinder';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ const App = (): JSX.Element => {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Loader" component={Loader} />
+        <Stack.Screen name="Tinder" component={Tinder} />
       </Stack.Navigator>
     </NavigationContainer>
   );
