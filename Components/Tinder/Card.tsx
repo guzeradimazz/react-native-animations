@@ -34,6 +34,7 @@ const Card = ({name, age, uri, isFirst, swipe, ...rest}) => {
     <Animated.View style={[styles.card]} {...rest}>
       <Image
         style={styles.image}
+        
         source={{
           uri: uri,
         }}
