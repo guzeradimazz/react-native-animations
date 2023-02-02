@@ -1,16 +1,15 @@
-import {StyleSheet, View, PanResponder} from 'react-native';
-import React, {useRef} from 'react';
+import {StyleSheet, View} from 'react-native';
+import React from 'react';
 import Card from './Tinder/Card';
-import Animated from 'react-native-reanimated';
 
-// export interface TinderItem {
-//   name: string;
-//   age: number;
-//   uri: string;
-// }
+export interface TinderItem {
+  name: string;
+  age: number;
+  uri: string;
+}
 
 export const Tinder = () => {
-  const tinderCards = [
+  const tinderCards: TinderItem[] = [
     {
       name: 'Andrew',
       age: 20,
@@ -18,27 +17,10 @@ export const Tinder = () => {
     },
   ];
 
-  const swipe = useRef(new Animated.Value()).current;
-
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: () => true,
-    onPanResponderMove: (_, {dx, dy}) => {
-      swipe.setValue({x: dx, y: dy});
-    },
-    onPanResponderRelease: () => {
-      Animated.spring(swipe, {
-        toValue: {x: 0, y: 0},
-        useNativeDriver: true,
-        friction: 5,
-      });
-    },
-  });
-
   return (
     <View style={styles.wrapper}>
       {tinderCards.map((i, idx) => {
         const isFirst = idx === 0;
-        const dragHandler = isFirst ? panResponder.panHandlers : {};
         return (
           <Card
             key={idx}
@@ -46,8 +28,6 @@ export const Tinder = () => {
             age={i.age}
             uri={i.uri}
             isFirst={isFirst}
-            swipe={swipe}
-            {...dragHandler}
           />
         );
       })}
