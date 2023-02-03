@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Loader} from './Components/Loader';
 import {Tinder} from './Components/Tinder';
+import GestureEvent from './Components/GestureEvent';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ const App = (): JSX.Element => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Loader" component={Loader} />
         <Stack.Screen name="Tinder" component={Tinder} />
+        <Stack.Screen name="Gesture Handler" component={GestureEvent} />
       </Stack.Navigator>
     </NavigationContainer>
   );
