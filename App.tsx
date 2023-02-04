@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Loader} from './Components/Loader';
 import {Tinder} from './Components/Tinder';
 import GestureEvent from './Components/GestureEvent';
+import BlocksTransition from './Components/BlocksTransition';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ const HomeScreen = ({navigation}: any) => {
     'Loader',
     'Tinder',
     'Gesture Handler',
-    'RGB Slider',
+    'Blocks Transition',
   ];
   return (
     <View style={styles.wrapper}>
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
         <Stack.Screen name="Loader" component={Loader} />
         <Stack.Screen name="Tinder" component={Tinder} />
         <Stack.Screen name="Gesture Handler" component={GestureEvent} />
+        <Stack.Screen name="Blocks Transition" component={BlocksTransition} />
       </Stack.Navigator>
     </NavigationContainer>
   );
