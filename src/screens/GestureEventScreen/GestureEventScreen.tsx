@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
 import {PanGestureHandler} from 'react-native-gesture-handler';
 import Animated, {
@@ -7,8 +6,9 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
+import { styles } from './GestureEventScreen.styles'
 
-const GestureEvent = () => {
+export const GestureEventScreen = () => {
   const pressed = useSharedValue(false);
   const startPosition = 0;
   const x = useSharedValue(startPosition);
@@ -45,16 +45,3 @@ const GestureEvent = () => {
     </PanGestureHandler>
   );
 };
-
-export default GestureEvent;
-
-const styles = StyleSheet.create({
-  ball: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    position: 'absolute',
-    top: '20%',
-    left: '24%',
-  },
-});

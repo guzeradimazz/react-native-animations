@@ -11,7 +11,7 @@ interface SquareProps {
   progress: Animated.SharedValue<number>;
 }
 
-const Square = ({idx, progress}: SquareProps) => {
+export const Square = ({idx, progress}: SquareProps) => {
   const offsetAngle = (2 * Math.PI) / 12;
   const finalAngle = offsetAngle * (12 - 1 - idx);
 
@@ -62,5 +62,3 @@ const Square = ({idx, progress}: SquareProps) => {
     />
   );
 };
-
-export default Square;

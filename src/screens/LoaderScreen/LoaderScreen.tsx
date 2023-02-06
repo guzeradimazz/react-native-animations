@@ -6,9 +6,9 @@ import {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import Square from './Loader/Square';
+import {Square} from './components/Square/Square';
 
-export const Loader = () => {
+export const LoaderScreen = () => {
   const progress = useSharedValue(0);
   useEffect(() => {
     progress.value = withRepeat(

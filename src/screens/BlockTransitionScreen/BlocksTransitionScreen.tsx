@@ -1,4 +1,4 @@
-import {Button, StyleSheet, View} from 'react-native';
+import { Button, View } from 'react-native';
 import React from 'react';
 import Animated, {
   Easing,
@@ -8,8 +8,9 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import { styles } from './BlocksTransitionScreen.styles';
 
-const BlocksTransition = () => {
+export const BlocksTransitionScreen = () => {
   const offset = useSharedValue(0);
   const rotationValue = useSharedValue(0);
   const offsetY = useSharedValue(0);
@@ -18,27 +19,27 @@ const BlocksTransition = () => {
 
   const firstBrickStyles = useAnimatedStyle(() => {
     return {
-      transform: [{translateX: withSpring(offset.value * 255)}],
+      transform: [{ translateX: withSpring(offset.value * 255) }],
     };
   });
 
   const secondBrickStyles = useAnimatedStyle(() => {
     return {
-      transform: [{rotateZ: withSpring(`${rotationValue.value}deg`)}],
+      transform: [{ rotateZ: withSpring(`${rotationValue.value}deg`) }],
     };
   });
 
   const thirdBrickStyles = useAnimatedStyle(() => {
     return {
-      transform: [{translateY: withSpring(offsetY.value * 255)}],
+      transform: [{ translateY: withSpring(offsetY.value * 255) }],
     };
   });
 
   const fourthBrickStyles = useAnimatedStyle(() => {
     return {
       transform: [
-        {translateX: withSpring(doubleX.value * 200)},
-        {translateY: withSpring(doubleY.value * 200)},
+        { translateX: withSpring(doubleX.value * 200) },
+        { translateY: withSpring(doubleY.value * 200) },
       ],
     };
   });
@@ -74,12 +75,15 @@ const BlocksTransition = () => {
       </View>
 
       <View
-        style={[styles.card, {justifyContent: 'center', alignItems: 'center'}]}>
+        style={[
+          styles.card,
+          { justifyContent: 'center', alignItems: 'center' },
+        ]}>
         <Animated.View style={[styles.brick, secondBrickStyles]} />
         <Button onPress={onPressRotation} title="START" />
       </View>
 
-      <View style={[styles.card, {height: 150}]}>
+      <View style={[styles.card, { height: 150 }]}>
         <Animated.View style={[styles.brick, thirdBrickStyles]} />
         <Button onPress={onPressTranslateY} title="MOVE" />
       </View>
@@ -90,21 +94,3 @@ const BlocksTransition = () => {
     </View>
   );
 };
-
-export default BlocksTransition;
-
-const styles = StyleSheet.create({
-  brick: {
-    backgroundColor: 'blue',
-    width: 70,
-    height: 70,
-    borderRadius: 20,
-  },
-  card: {
-    width: '90%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    padding: 15,
-    margin: 5,
-  },
-});
