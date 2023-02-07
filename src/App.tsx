@@ -6,6 +6,7 @@ import { HomeScreen } from './screens/HomeScreen/HomeScreen'
 import { TinderScreen } from './screens/TinderScreen/TinderScreen'
 import { GestureEventScreen } from './screens/GestureEventScreen/GestureEventScreen'
 import { BlocksTransitionScreen } from './screens/BlockTransitionScreen/BlocksTransitionScreen'
+import { CardsScreen } from './screens/CardsScreen/CardsScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -14,7 +15,8 @@ enum AppRoutes {
   Loader = 'Loader',
   Tinder = 'Tinder',
   GestureEvent = 'Gesture Event',
-  BlocksTransition = 'Blocks Transition'
+  BlocksTransition = 'Blocks Transition',
+  Cards = 'Cards'
 }
 
 const App = (): JSX.Element => {
@@ -32,6 +34,7 @@ const App = (): JSX.Element => {
           name={AppRoutes.BlocksTransition}
           component={BlocksTransitionScreen}
         />
+        <Stack.Screen name={AppRoutes.Cards} component={CardsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

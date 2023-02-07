@@ -6,8 +6,9 @@ export const HomeScreen = ({ navigation }: any) => {
   const titles: string[] = [
     'Loader',
     'Tinder',
-    'Gesture Handler',
-    'Blocks Transition'
+    'Gesture Event',
+    'Blocks Transition',
+    'Cards'
   ]
 
   return (
