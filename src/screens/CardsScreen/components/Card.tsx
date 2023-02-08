@@ -10,12 +10,18 @@ import Animated, {
   withTiming
 } from 'react-native-reanimated'
 
-export const Card = ({ color, idx, isSwitched }: any) => {
+interface ICard {
+  color: string
+  idx: number
+  isSwitched: boolean
+}
+
+export const Card = ({ color, idx, isSwitched }: ICard) => {
   const rotation = useSharedValue(0)
   const translation = useSharedValue(0)
 
   const onSwitchCards = () => {
-    translation.value = withTiming(idx*20 + 5, {
+    translation.value = withTiming(idx * 20 + 5, {
       easing: Easing.linear,
       duration: 500
     })

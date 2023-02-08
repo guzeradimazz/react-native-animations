@@ -22,7 +22,7 @@ export const CardsScreen = () => {
     }
   ]
 
-  const [isSwitched, setSwitched] = useState(false)
+  const [isSwitched, setSwitched] = useState<boolean>(false)
 
   const handleSwitchCards = () => {
     setSwitched(true)
