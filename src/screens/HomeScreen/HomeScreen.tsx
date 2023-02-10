@@ -8,7 +8,8 @@ export const HomeScreen = ({ navigation }: any) => {
     'Tinder',
     'Gesture Event',
     'Blocks Transition',
-    'Cards'
+    'Cards',
+    'Day Night Switched'
   ]
 
   return (

@@ -1,23 +1,23 @@
-import { Text, Image, View } from 'react-native';
-import React, { useCallback } from 'react';
+import { Text, Image, View } from 'react-native'
+import React, { useCallback } from 'react'
 import Animated, {
   runOnJS,
   useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
-} from 'react-native-reanimated';
-import { PanGestureHandler } from 'react-native-gesture-handler';
-import { Choice } from './Choice';
-import { styles } from './Card.styles';
+  withSpring
+} from 'react-native-reanimated'
+import { PanGestureHandler } from 'react-native-gesture-handler'
+import { Choice } from '../Choice/Choice'
+import { styles } from './Card.styles'
 
 interface ICard {
-  name: string;
-  age: number;
-  uri: string;
-  choice: string;
-  choiceEvent: (value: number) => void;
-  isFirst: boolean;
+  name: string
+  age: number
+  uri: string
+  choice: string
+  choiceEvent: (value: number) => void
+  isFirst: boolean
 }
 
 export const Card = ({
@@ -26,56 +26,56 @@ export const Card = ({
   uri,
   choice,
   choiceEvent,
-  isFirst,
+  isFirst
 }: ICard) => {
   const renderChoice = useCallback(() => {
     return (
       <>
         {choice === 'left' ? (
           <View style={styles.likeContainer}>
-            <Choice color="#00eda6" type="LIKE" />
+            <Choice color='#00eda6' type='LIKE' />
           </View>
         ) : choice === 'right' ? (
           <View style={styles.nopeContainer}>
-            <Choice color="#ff006f" type="NOPE" />
+            <Choice color='#ff006f' type='NOPE' />
           </View>
         ) : null}
       </>
-    );
-  }, [choice]);
+    )
+  }, [choice])
 
-  const pressed = useSharedValue(false);
+  const pressed = useSharedValue(false)
 
-  const startingPosition = 0;
-  const x = useSharedValue(startingPosition);
-  const y = useSharedValue(startingPosition);
+  const startingPosition = 0
+  const x = useSharedValue(startingPosition)
+  const y = useSharedValue(startingPosition)
 
   const eventHandler = useAnimatedGestureHandler({
     onStart: () => {
-      pressed.value = true;
+      pressed.value = true
     },
     onActive: event => {
-      x.value = startingPosition + event.translationX;
-      y.value = startingPosition + event.translationY;
+      x.value = startingPosition + event.translationX
+      y.value = startingPosition + event.translationY
     },
     onEnd: () => {
-      pressed.value = false;
-      x.value = withSpring(startingPosition);
-      y.value = withSpring(startingPosition);
-    },
-  });
+      pressed.value = false
+      x.value = withSpring(startingPosition)
+      y.value = withSpring(startingPosition)
+    }
+  })
 
   const uas = useAnimatedStyle(() => {
-    runOnJS(choiceEvent)(x.value);
+    runOnJS(choiceEvent)(x.value)
 
     return {
       transform: [
         { translateX: x.value },
         { translateY: y.value },
-        { rotate: `${x.value / 10}deg` },
-      ],
-    };
-  });
+        { rotate: `${x.value / 10}deg` }
+      ]
+    }
+  })
 
   return (
     <PanGestureHandler onGestureEvent={eventHandler}>
@@ -83,7 +83,7 @@ export const Card = ({
         <Image
           style={styles.image}
           source={{
-            uri: uri,
+            uri: uri
           }}
         />
         <Text style={styles.header}>{name + '    ' + age}</Text>
@@ -96,5 +96,5 @@ export const Card = ({
         {isFirst && renderChoice()}
       </Animated.View>
     </PanGestureHandler>
-  );
-};
+  )
+}

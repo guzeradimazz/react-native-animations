@@ -1818,6 +1818,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-native-linear-gradient@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native-linear-gradient/-/react-native-linear-gradient-2.4.0.tgz#9c223f8aef2b17f18902518dabf1faeccfe4f7d4"
+  integrity sha512-4fLf0oo4zEbfGPo7rprezBdyy490eyTpl4cogWR8i9CDJzlsAEpmfkjVx8BpgOOF/RNfpa1XgFiSABDqtIi5/Q==
+  dependencies:
+    react-native-linear-gradient "*"
+
 "@types/react-test-renderer@^18.0.0":
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-18.0.0.tgz#7b7f69ca98821ea5501b21ba24ea7b6139da2243"
@@ -5871,7 +5878,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@*, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@*, prop-types@^15.6.0, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5941,6 +5948,14 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-animated-linear-gradient@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-animated-linear-gradient/-/react-native-animated-linear-gradient-1.3.0.tgz#d1ca0bac0d0e35a35e9fe8f4ddce54002d0b5c21"
+  integrity sha512-+fwRXGqcS2GDa4+1P1TGmuvCVajEx3wcK0pymIm4v66XPmSAmocouTUKcG2aaHPvRV0ctIgZ2wZbm20rKMP01Q==
+  dependencies:
+    prop-types "^15.6.0"
+    rgb2hex "^0.1.0"
+
 react-native-codegen@^0.71.3:
   version "0.71.3"
   resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.71.3.tgz#75fbc591819050791319ebdb9fe341ee4df5c288"
@@ -5971,6 +5986,11 @@ react-native-iphone-x-helper@^1.2.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
+
+react-native-linear-gradient@*, react-native-linear-gradient@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.6.2.tgz#56598a76832724b2afa7889747635b5c80948f38"
+  integrity sha512-Z8Xxvupsex+9BBFoSYS87bilNPWcRfRsGC0cpJk72Nxb5p2nEkGSBv73xZbEHnW2mUFvP+huYxrVvjZkr/gRjQ==
 
 react-native-reanimated@^2.14.4:
   version "2.14.4"
@@ -6270,6 +6290,11 @@ reusify@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+
+rgb2hex@^0.1.0:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/rgb2hex/-/rgb2hex-0.1.10.tgz#4fdd432665273e2d5900434940ceba0a04c8a8a8"
+  integrity sha512-vKz+kzolWbL3rke/xeTE2+6vHmZnNxGyDnaVW4OckntAIcc7DcZzWkQSfxMDwqHS8vhgySnIFyBUH7lIk6PxvQ==
 
 rimraf@^3.0.2:
   version "3.0.2"

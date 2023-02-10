@@ -1,6 +1,6 @@
 import { Button, View } from 'react-native'
 import React, { useState } from 'react'
-import { Card } from './components/Card'
+import { Card } from './components/Card/Card'
 import { styles } from './CardScreen.styles'
 
 export const CardsScreen = () => {
