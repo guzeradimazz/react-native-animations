@@ -1,4 +1,4 @@
-# react-native-animations
+# Hi there! This is my animated book! You can find there some animations using React Native | TypeScript | Reanimated
 
 | Day Night Switcher | Tinder cards | Cards rotation |
 | -------------- | -------------- | -------------- |
