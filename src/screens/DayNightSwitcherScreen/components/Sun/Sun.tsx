@@ -10,7 +10,7 @@ interface ISun {
   animatedValue: Animated.SharedValue<number>
 }
 
-const Sun = ({ animatedValue }: ISun) => {
+export const Sun = ({ animatedValue }: ISun) => {
   const sunAnimatedValue = useSharedValue(animatedValue ? 0 : 1)
   const uas = useAnimatedStyle(() => {
     const translate = interpolate(animatedValue.value, [0, 2], [0, -800])
@@ -23,5 +23,3 @@ const Sun = ({ animatedValue }: ISun) => {
 
   return <Animated.View style={[styles.sun, uas]} />
 }
-
-export default Sun

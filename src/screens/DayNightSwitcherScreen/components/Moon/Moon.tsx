@@ -9,7 +9,7 @@ interface IMoon {
   animatedValue: Animated.SharedValue<number>
 }
 
-const Moon = ({ animatedValue }: IMoon) => {
+export const Moon = ({ animatedValue }: IMoon) => {
   const uas = useAnimatedStyle(() => {
     const translate = interpolate(animatedValue.value, [0, 2], [800, -700])
 
@@ -27,4 +27,3 @@ const Moon = ({ animatedValue }: IMoon) => {
   )
 }
 
-export default Moon

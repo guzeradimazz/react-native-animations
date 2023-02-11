@@ -2,7 +2,7 @@ import { Image } from 'react-native'
 import React from 'react'
 import { styles } from './BackgroundImage.styles'
 
-const BackgroundImage = () => {
+export const BackgroundImage = () => {
   return (
     <Image
       style={styles.image}
@@ -11,6 +11,3 @@ const BackgroundImage = () => {
     />
   )
 }
-
-export default BackgroundImage
-

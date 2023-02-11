@@ -6,23 +6,21 @@ interface ISwitcher {
   toggleSwitch: () => void
 }
 
-const Switcher = ({ isEnabled, toggleSwitch }: ISwitcher) => {
+export const Switcher = ({ isEnabled, toggleSwitch }: ISwitcher) => {
   return (
     <Switch
       style={styles.switcher}
-      trackColor={{ false: '#767577', true: '#81b0ff' }}
-      thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+      trackColor={{ false: '#87b6c9', true: '#ffef78' }}
+      thumbColor={isEnabled ? '#fab575' : '#434d91'}
       ios_backgroundColor='#3e3e3e'
       onValueChange={toggleSwitch}
       value={isEnabled}
     />
   )
 }
-
-export default Switcher
-
 const styles = StyleSheet.create({
   switcher: {
-    margin: 10
+    margin: 10,
+    zIndex: 10
   }
 })
